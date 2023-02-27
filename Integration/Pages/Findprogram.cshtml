@@ -1,0 +1,54 @@
+﻿@page
+@model Integration.Pages.FindprogramModel
+@{
+}
+
+
+
+
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        
+       
+    </head>
+    <body>
+        <h1>Find Program</h1>
+
+        <form name="FindProgram" method="post">
+            <div class="col-sm-6">
+                <label for="prog_code">Program Code:</label>
+                <input type="text" id="programcode" name="programcode" value="@Model.programcode">
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br />
+        <h1><b>@Model.Message</b></h1>
+        <br />
+
+
+
+
+        <table border="1">
+            <tr>
+                <th>Program Code</th>
+                <th>Description</th>
+              
+            </tr>
+            @if (Model.conf)
+            {
+                <tr>
+                    <td>@Model.find.ProgramCode</td>
+                    <td>@Model.find.Description</td>
+
+                </tr>
+            }
+        </table>
+
+        <br />
+
+    </body>
+    </html>

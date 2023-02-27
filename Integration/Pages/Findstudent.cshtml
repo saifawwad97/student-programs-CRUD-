@@ -1,0 +1,57 @@
+﻿@page
+    @model Integration.Pages.FindstudentModel
+    @{
+    }
+
+<!DOCTYPE html>
+    <html>
+
+    <body>
+        <strong>@Model.errorMessage</strong>
+        <form name="FindStudent" method="POST">
+
+
+            <div class=" row mb-3">
+                <lablel class="col-sm-3 col-form-label"> StudentId</lablel>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="studentid" value="@Model.studentid" />
+                </div>
+            </div>
+
+
+
+
+            <strong> @Model.successMessage</strong>
+
+
+            <div class="row mb-3">
+                <div class="offeset-sm-3 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+                <div class="col-sm-3 d-grid">
+                    <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
+
+            <table border="1">
+                <tr>
+                    <th>StudentID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>@Model.finds.StudentID</td>
+                    <td>@Model.finds.FirstName</td>
+                    <td>@Model.finds.LastName</td>
+                    <td>@Model.finds.Email</td>
+                </tr>
+            </table>
+
+    </body>
+    </html>
+
